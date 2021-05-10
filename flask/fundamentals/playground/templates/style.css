@@ -1,0 +1,16 @@
+h1 {
+    margin: auto;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    margin: 20px;
+    justify-content: space-evenly;
+}
+
+div p {
+    width: 100px;
+    height: 200px;
+    background-color: blue;
+}

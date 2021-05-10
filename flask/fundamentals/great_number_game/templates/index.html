@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename = 'style.css') }} ">
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <h3>I am thinking of a number between 1 and 100</h3>
+    <p>Take a guess!</p>
+
+    {% if 'message' in session %}
+    {% if session['message'] == "Too Low!" or session['message'] == "Too High!" %}
+
+        <p>{{ session['message'] }}</p>
+
+    {% elif session['message'] == 'Correct!' %}
+
+        <p>You got it right! <a href=''>Try again!</a></p>
+        
+    {% endif %}
+    {% endif %}
+
+        <form action="/result" method="POST">
+            <input type="text" name="number" value="">
+            <input type="submit" name="submit"> 
+        </form>
+</body>
+</html>
