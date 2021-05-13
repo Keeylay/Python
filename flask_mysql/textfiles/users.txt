@@ -1,0 +1,29 @@
+insert into users (first_name, last_name, email, created_at, updated_at)
+values ('mike', 'woods', 'mikewoods@yahoo.com', now(), now());
+insert into users (first_name, last_name, email, created_at, updated_at)
+values ('timmy', 'tipperton', 'snakeman32@aol.com', now(), now());
+insert into users (first_name, last_name, email, created_at, updated_at)
+values ('ryan', 'goldburgh', 'ryangoldburgh@hotmail.com', now(), now())
+
+select * from users
+
+select email from users
+where id = 1
+
+select * from users
+where id = 3
+
+update users set last_name='Pancakes' 
+where id = 3
+
+delete from users 
+where id = 2
+
+select * from users
+order by first_name
+
+select * from users
+order by first_name desc;
+
+
+

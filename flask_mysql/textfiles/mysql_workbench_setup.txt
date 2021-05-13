@@ -1,0 +1,11 @@
+INSERT INTO events (title, description, location, starttime, endtime, change_at, update_at)
+VALUES ('Monster Mash', 'Fun in the sun', 'Mars', '10:00', '17:00', NOW(), NOW())
+
+select * from events
+
+update events set starttime = '11:00', endtime = '18:00'
+where id = 1
+
+delete from events where id = 1
+
+select * from events

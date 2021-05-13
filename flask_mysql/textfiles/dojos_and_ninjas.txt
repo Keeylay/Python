@@ -1,0 +1,45 @@
+insert into dojos (name, created_at, updated_at)
+values ('spare spare spare', now(), now());
+insert into dojos (name, created_at, updated_at)
+values ('kick pow wow', now(), now());
+insert into dojos (name, created_at, updated_at)
+values ('Doors Manner', now(), now())
+
+delete from dojos where id > 0
+
+insert into dojos (name, created_at, updated_at)
+values ('spare spare spare', now(), now());
+insert into dojos (name, created_at, updated_at)
+values ('kick pow wow', now(), now());
+insert into dojos (name, created_at, updated_at)
+values ('Doors Manner', now(), now())
+
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('mike', 'woods','29', '4', now(),now());
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('scotty', 'pippen','3', '4', now(),now());
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('matt', 'fiddle','44', '4', now(),now())
+
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('sarah', 'nevers','22', '5', now(),now());
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('kyle', 'kicken','33', '5', now(),now());
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('david', 'stars','4', '5', now(),now())
+
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('mark', 'yours','24', '6', now(),now());
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('maggie', 'maggie','123', '6', now(),now());
+insert into ninjas (first_name, last_name, age, dojo_id, created_at, updated_at)
+values ('laura', 'lu','17', '6', now(),now())
+
+select * from ninjas
+where dojo_id = 4
+
+select * from ninjas
+where dojo_id = 6
+
+select * from dojos join ninjas on ninjas.dojo_id = dojos.id
+where ninjas.id = 10

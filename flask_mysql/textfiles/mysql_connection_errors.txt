@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 2069, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 2054, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Kyle\Desktop\codingdojo\Python\flask_mysql\db_connections\first_flask_mysql\server.py", line 6, in index
+    mysql = connectToMySQL('first_flask')               # call the function, passing in the name of our db
+  File "C:\Users\Kyle\Desktop\codingdojo\Python\flask_mysql\db_connections\first_flask_mysql\mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+  File "C:\Users\Kyle\Desktop\codingdojo\Python\flask_mysql\db_connections\first_flask_mysql\mysqlconnection.py", line 6, in __init__
+    connection = pymysql.connect(host = 'localhost',
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\pymysql\connections.py", line 633, in connect
+    self._request_authentication()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\pymysql\connections.py", line 932, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\pymysql\_auth.py", line 239, in caching_sha2_password_auth
+    pkt = conn._read_packet()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1049, "Unknown database 'first_flask'")
+
+Traceback (most recent call last):
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 2069, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 2054, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Kyle\Desktop\codingdojo\Python\flask_mysql\db_connections\first_flask_mysql\server.py", line 9, in index
+    return render_template("index.html")
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\jinja2\environment.py", line 1067, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\jinja2\environment.py", line 996, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\jinja2\environment.py", line 957, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\jinja2\loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\Kyle\.virtualenvs\first_flask_mysql-CeM4XZK4\Lib\site-packages\flask\templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html

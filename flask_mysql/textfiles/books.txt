@@ -1,0 +1,59 @@
+insert into authors (name, created_at, updated_at) 
+values ('Jane Austen', now(), now());
+insert into authors (name, created_at, updated_at) 
+values ('Emily Dickinson', now(), now());
+insert into authors (name, created_at, updated_at) 
+values ('Fyodor Dostoevsky', now(), now());
+insert into authors (name, created_at, updated_at) 
+values ('William Shakespeare', now(), now());
+insert into authors (name, created_at, updated_at) 
+values ('Lau Tzu', now(), now());
+
+insert into books (title, num_of_pages, create_at, updated_at)
+values ('C Sharp', '55', now(), now() );
+insert into books (title, num_of_pages, create_at, updated_at)
+values ('Java', '60', now(), now() );
+insert into books (title, num_of_pages, create_at, updated_at)
+values ('Python', '55', now(), now() );
+insert into books (title, num_of_pages, create_at, updated_at)
+values ('PHP', '55', now(), now() );
+insert into books (title, num_of_pages, create_at, updated_at)
+values ('Ruby', '55', now(), now() );
+
+update books set title = 'C#'
+where id = 1
+
+update authors set name = 'Bill Shakespeare'
+where id = 9
+
+insert into books.favorites (book_id, author_id) values ('1', '1');
+insert into books.favorites (book_id, author_id) values ('2', '1');
+
+insert into books.favorites (book_id, author_id) values ('1', '7');
+insert into books.favorites (book_id, author_id) values ('2', '7');
+insert into books.favorites (book_id, author_id) values ('3', '7');
+
+insert into books.favorites (book_id, author_id) values ('1', '8');
+insert into books.favorites (book_id, author_id) values ('2', '8');
+insert into books.favorites (book_id, author_id) values ('3', '8');
+insert into books.favorites (book_id, author_id) values ('4', '8');
+
+insert into books.favorites (book_id, author_id) values ('1', '9');
+insert into books.favorites (book_id, author_id) values ('2', '9');
+insert into books.favorites (book_id, author_id) values ('3', '9');
+insert into books.favorites (book_id, author_id) values ('4', '9');
+insert into books.favorites (book_id, author_id) values ('5', '9');
+
+select author_id from favorites
+where book_id = 3
+
+delete from favorites
+where author_id = 7 and book_id = 3
+
+insert into books.favorites (book_id, author_id) values (2, 10)
+
+select book_id from favorites
+where author_id = 8
+
+select author_id from favorites
+where book_id = 5
