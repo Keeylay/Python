@@ -1,0 +1,12 @@
+insert into users (first_name, last_name)
+values ('mike', 'woods');
+insert into users (first_name, last_name)
+values ('kyle', 'lames');
+insert into users (first_name, last_name)
+values ('david', 'bedframe');
+insert into users (first_name, last_name)
+values ('sheets', 'table');
+insert into users (first_name, last_name)
+values ('laura', 'basket');
+insert into users (first_name, last_name)
+values ('lenny', 'tompson');
