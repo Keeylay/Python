@@ -1,5 +1,5 @@
-from flask_mysql.validation.dojo_survey.flask_app.controllers.dojos import results
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask import flash
 
 class Dojo():
 
@@ -22,3 +22,20 @@ class Dojo():
             results.append(cls(dojo))
 
         return results
+
+    @staticmethod
+    def validate_survey(dojo):
+        is_valid = True
+        if len(dojo['name']) < 2:
+            flash("Name must be at least 2 characters.")
+            is_valid = False
+        # if len(dojo['location']) != dojo['location']:
+        #     flash("A location must be choosen.")
+        #     is_valid = False
+        # if len(dojo['languge']) != dojo['language']:
+        #     flash("A language must be choosen.")
+        #     is_valid = False
+        if len(dojo['comments']) < 1:
+            flash("A comment must be made.")
+            is_valid = False
+        return is_valid
