@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add New Recipe</h1>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout/user">Log Out</a>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/create/recipe" method="POST">
+    Name: <input type="text" name="name"><br>
+    Description: <input type="text" name="description"><br>
+    Instructions: <input type="text" name="instruction"><br>
+    Under 30 minutes to prepare? <input type="radio" name="preptime" value= 'Yes' checked="checked"> Yes <input type="radio" name="preptime" value='No'> No<br>
+    <input type="submit" value="Create">
+    </form>
+</body>
+</html>

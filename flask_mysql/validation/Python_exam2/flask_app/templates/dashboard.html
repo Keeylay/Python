@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}    
+            {% if messages %}                            
+                {% for message in messages %}            
+                    <p>{{message}}</p>                   
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    <h1>Welcome {{session['first_name']}} {{session['last_name']}}!</h1>
+    <h2>cars for sale</h2>
+    <table>
+        <th>Model</th>
+        <th>Year</th>
+        <th>seller</th>
+        <th>Actions</th>
+    
+    {%for car in cars%}
+        <tr>
+            <td>{{car.model}}</td>
+            <td>{{car.year}}</td>
+            <td>{{car.user.first_name}} {{car.user.last_name}}</td>
+            {%if car.purchaser_id == None%}
+            {%if car.seller_id == session['user_id']%}
+            <td><a href="/edit/{{car.id}}">edit</a> <a href="/delete/{{car.id}}">delete</a></td>
+            {%else%}
+            <td><a href="/car/{{car.id}}">view</a></td>
+            {%endif%}
+            {%else%}
+            <td><h3>SOLD</h3></td>
+            {%endif%}
+        </tr>
+    {%endfor%}
+    </table>
+    <a href="/user/{{session['user_id']}}">View Purchases</a>
+    <a href="/add_car">add a car</a>
+    <button onclick="window.location.href='/logout';">Log Out</button>
+</body>
+</html>

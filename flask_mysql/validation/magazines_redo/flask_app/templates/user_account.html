@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/magazine/new">Add Magazine</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout/user">Log Out</a>
+
+    <h1>Update User</h1>
+    <form action="/update" method="POST">
+    First Name: <input type="text" name="first_name" value="{{ user.first_name }}">
+    Last Name: <input type="text" name="last_name"  value="{{ user.last_name }}">
+    Email: <input type="text" name="email"  value="{{ user.email }}">
+    <input type="submit" value="Update">
+    </form>
+
+    <h1>User's Magazines</h1>
+    {% for magazine in user_magazines %}
+    <p>{{ magazine.title }} <a href="/delete/{{ magazine.id }}">delete</a></p>
+    {% endfor %}
+</body>
+</html>

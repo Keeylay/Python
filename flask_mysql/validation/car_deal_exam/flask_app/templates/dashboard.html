@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Car Dealz, {{ users.first_name }}!!! </h1>
+    <a href="/logout/user">Log Out</a>
+
+    <h2>Cars for Sale</h2>
+
+    <table>
+        <tr>
+            <td>Model</td>
+            <td>Year</td>
+            <td>Seller</td>
+            <td>Actions</td>
+        </tr>
+        {% for car in dashboard %}
+        <tr>
+            <td>{{ car.model }}</td>
+            <td>{{ car.year }}</td>
+            <td>{{ car.user_id }}</td>
+            {% if users['id'] == car.user.id %}
+                <td><a href="/edit/{{ car.id }}">  edit  </a> <a href="/purchase/{{ car.id }}"> delete </a></td>
+            {% else %}
+                <td><a href="/show/{{ car.id }}">view</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/new">Add a Car</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Message</h1>
+    <p>Posted by: {{message.user.nickname}} ({{message.user.email}})</p>
+    <p>{{message.content}}</p>
+    <h2>Comments:</h2>
+
+    {% for comment in message.comments %}
+    <div>
+        <p>{{comment.user_nickname}} says:</p>
+        <p>{{comment.content}}</p>
+    </div>
+    {% endfor %}
+
+    <h2>Add comment:</h2>
+    {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+            {% for message in messages %}            
+                <p>{{message}}</p>                   
+            {% endfor %}
+        {% endif %}
+    {% endwith %}  
+    <form action='/messages/{{message.id}}/add_comment' method='POST'>
+        <input type='text' name='content'><br>
+        <input type='submit'>
+    </form>
+    <a href='/messages'>Go back to all messages</a>
+</body>
+</html>

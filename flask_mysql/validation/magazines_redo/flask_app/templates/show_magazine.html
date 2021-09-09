@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/magazine/new">Add Magazine</a>
+    <a href="/users">Account</a>
+    <a href="/logout/user">Log Out</a>
+
+        <h1> {{ magazines.title }}</h1>
+        <p>Added by {{ magazine_user.first_name }}{{ magazine_user.last_name }}</p>
+        <p>Description:</p>
+            <p>{{ magazines.description }}</p>
+
+</body>
+</html>
+
+

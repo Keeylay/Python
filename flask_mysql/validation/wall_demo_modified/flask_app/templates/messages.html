@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome to the python job board</h1>
+    <h2>where all your python job dreams come true</h2>
+
+    {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+            {% for message in messages %}            
+                <p>{{message}}</p>                   
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <p>Post a new message:</p>
+    <form action='/messages/create' method='POST'>
+        <textarea name='content'></textarea><br>
+        <input type='submit'>
+    </form>
+
+    {% for message in all_messages %}
+    <div>
+        <p>{{message.user.nickname}} posted on {{message.created_at}}:</p>
+        <p>{{message.content}}</p>
+        {% if session['user_id'] == message.user.id %}<a href='/messages/{{message.id}}/delete'>Delete</a> <a href='/messages/{{message.id}}/edit'>Edit</a>{% endif %} <a href='/messages/{{message.id}}'>View full message</a>
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html>

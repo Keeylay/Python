@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="border: 2px solid black;">
+        <h1>${{car.price}}</h1>
+        <p>Model: {{car.model}}</p>
+        <p>Make: {{car.make}}</p>
+        <p>year: {{car.year}}</p>
+        <p>Description: {{car.description}}</p>
+        <p>Seller: {{car.user.first_name}} {{car.user.last_name}}</p>
+        <form action="/purchase/{{car.id}}" method="post">
+            <input type="hidden" value="{{car.id}}">
+            <input type="submit" value="purchase">
+        </form>
+    </div>
+
+    
+    <button onclick="window.location.href='/dashboard';">Dashboard</button>
+    <button onclick="window.location.href='/logout';">Log Out</button>
+</body>
+</html>
